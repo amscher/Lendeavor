@@ -12,7 +12,6 @@ margin: 40px auto;
 
 /*progressbar*/
 .progress-bar {
-	margin-bottom: 30px;
 	overflow: hidden;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
@@ -31,10 +30,10 @@ margin: 40px auto;
 	content: counter(step);
 	counter-increment: step;
 	font-family: 'lato';
-	width: 40px;
-	line-height: 40px;
+	width: 30px;
+	line-height: 30px;
 	display: block;
-	font-size: 25px;
+	font-size: 17px;
 	color: #a8a8a8;
   	background: #ddd;
 	border-radius: 6px;
@@ -53,7 +52,7 @@ margin: 40px auto;
     color: #8bc53f;
 	position: absolute;
 	left: -50%;
-	top: 19px;
+	top: 13px;
 	z-index: -1; /*put it behind the numbers*/
 }
 .progress-bar li:first-child:after {
@@ -82,19 +81,25 @@ margin: 40px auto;
 	background: #eee;
 }
 
-.form-description {
-	height: 200px;
+section .form-description {
+	height: 10px;
 	position: relative;
-	top: 65px;
 	z-index: -1;
+	padding-top: 0px;
+	height: 150px;
+	padding: 0;
 }
 
-.form-content-container {
+.form-description  .form-content-container {
 	padding-top: 0px;
 }
 
-.form-content-container h1 {
-	padding-top: 5px;
+.form-description .form-content-container h1 {
+	padding-top: 35px;
+}
+
+.form-description .form-content-container p {
+	text-align: center;
 }
 
 .col-centered {
@@ -128,7 +133,7 @@ margin: 40px auto;
 
 .fields {
 	display: inline-block;
-	width: 75%;
+	width: 74%;
 	margin: 5px 0 0 10px;
 }
 
