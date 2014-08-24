@@ -1,0 +1,74 @@
+<section class="progress-bar">
+	<ul class=" ">
+		<li class="active-step" >PROFILE</li>
+		<li class=" " >BUSINESS INFORMATION</li>
+		<li class="" >LENDER MATCH</li>
+		<li class="" >LOAN CONFIRMATION</li>
+	</ul>
+</section>
+
+
+<section class="hero-container form-description">
+	<div class="hero-content-container form-content-container">
+		<h1>Let's get started.</h1>
+		<p>Fill out the easy 3-step form below to get your loan.</p>
+	</div>
+</section>
+
+<div class="col-centered">
+<section>
+		<form>
+		<div class="form-row">
+			<label for="zip" class="description-label">Business Zip</label>
+			<div class="fields">
+				<input type="text" class="personal-information zip" name="zip" id="zip" placeholder="Zip"/>
+			</div>
+		</div>
+		<div class="form-row">
+			<label for="company-name" class="description-label">Company Name</label>
+			<div class="fields">
+				<input type="text" class="personal-information company-name" name="company-name" placeholder="Company"/>
+			</div>
+		</div>
+		<div class="form-row">
+			<label for="capital" class="description-label">Purpose of Capital</label>
+			<div class="fields">
+				<p>What are you planning to do with your loan?</p>
+				<select name="capital" class="capital">
+					<option value="working-capital">Working Capital</option>
+					<option value="expansion-capital">Expansion Capital</option>
+					<option value="start-business">Start a Business</option>
+					<option value="acquire-business">Acquire a Business</option>
+					<option value="buy-equipment">Buy Equipment</option>
+					<option value="refinance">Refinance</option>
+					<option value="real-estate">Commercial Real Estate</option>
+					<option value="other">Other</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-row">
+			<label for="phone" class="description-label">Phone</label>
+			<div class="fields">
+				<input type="text" class="personal-information phone" name="phone" placeholder="Phone"/>
+			</div>
+		</div>
+		<div class="form-row password">
+			<label for="password" class="description-label">Password</label>
+			<div class="fields">
+				<input type="text" class="personal-information password" name="password" placeholder="Password" />
+			</div>
+		</div>
+		<div class="form-row">
+			<label for="password" class="description-label">Password Confirmation</label>
+			<div class="fields">
+				<input type="text" class="personal-information password" name="password" placeholder="Password"/>
+			</div>
+		</div>
+		<input checked="checked" id="borrower_accept_terms" name="borrower[accept_terms]" type="checkbox" value="1"/>
+		<p class="accept-terms">Click <a href="terms-and-conditions" target="_blank">Terms &amp; Conditions</a></p>
+		<div class="submit-fields">
+		<input type="button" name="next" class="email-button button submit-button" value="NEXT" />
+		</div>
+	</fieldset>
+	</form>
+</section>

@@ -1,0 +1,38 @@
+h1, h2, h3 {
+	padding: 20px;
+	color: #3D3D3D;
+	text-align: center;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2 {
+	font-weight: 600;
+	font-size: 20px;
+}
+
+h3 {
+	padding: 20px 10px 10px 20px;
+	font-weight: 300;
+	font-size: 18px;
+	font-style: italic;
+}
+
+h4 {
+	font-weight: 500;
+}
+
+p {
+	font-family: 'Lato';
+	font-weight: 300;
+	text-align: center;
+	line-height: 1.25em
+}
+
+
+/*.content-container {
+	margin: 0 auto;
+	margin-bottom: 50px;
+}*/
