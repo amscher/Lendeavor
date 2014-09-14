@@ -40,7 +40,7 @@
       <th>Type</th>
       <th>Interest Rate</th>
       <th>Personal Guarantee</th>
-      <th>Time to Obtain Funding</th>
+      <th>Time to Obtain Funding <br>(in days)</th>
     </thead>
     <tbody class="loantypes-table-body">
       <tr ng-init="show = false"
@@ -51,9 +51,15 @@
           ng-class="{'loantypes-row-expanded': show}">
         <td ng-click="show = !show">{{show ? '-' : '+'}}</td>
         <td ng-click="show = !show">{{type.title}}</td>
-        <td>{{type.interestRateLow}} - {{type.interestRateHigh}} %</td>
+        <td>
+          {{type.interestRateLow ?
+            type.interestRateLow  + " - " + type.interestRateHigh + "%" :
+            "Not Applicable"}}
+        </td>
         <td>{{type.personalGuarantee ? "yes" : "no"}}</td>
-        <td>{{type.fundingTimeStart}} - {{type.fundingTimeEnd}}</td>
+        <td>
+          {{type.fundingTimeStart ? type.fundingTimeStart : "Not Applicable"}}
+          {{type.fundingTimeEnd ? " - " + type.fundingTimeEnd : ""}}</td>
       </tr>
       <tr ng-repeat-end ng-if="show" class="loantypes-row-description">
         <td></td>
