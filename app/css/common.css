@@ -53,6 +53,10 @@ a {
   color: #008DBC;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 input[type=text], input[type=email], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -78,6 +82,7 @@ select option {
 }
 
 table {
+  width: 100%;
   margin: 50px auto;
 }
 
@@ -202,5 +207,16 @@ p.blurb {
 
 .button:hover {
   border: 1px solid white;
+}
+
+.number {
+  margin: 10px auto;
+  padding: 5px;
+  width: 30px;
+  color: #D3D4D4;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: 1px solid #D3D4D4;
 }
 

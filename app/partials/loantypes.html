@@ -11,19 +11,24 @@
 <section class="section-content-container">
   <div class="column-container">
     <div class="column" ng-repeat="dimensions in filterDimensions">
-      <h5>{{$index + 1 +  '. ' + dimensions.prompt}}</h5>
-  <!--     <div class="column-container">
-        <div ng-repeat="type in dimensions.type"
-             class="loantypes-filter-button-container"
-             onclick="selectType(event, $parent.dimensions, type)">
-          <button class="lightest-blue button">{{type.name}}</button>
-        </div>
-      </div> -->
-      <select ng-model="dimensions.filter"
-              ng-options="dimension.name for dimension in dimensions.type"
-              class="lightest-blue loantypes-dropdown dropdown">
-        <option value="">-- select one --</option>
-      </select>
+      <div class="number">{{$index + 1}}</div>
+      <h5>{{dimensions.prompt}}</h5>
+
+      <div class="btn-group" dropdown is-open="status.isopen">
+        <button type="button"
+          class="btn btn-primary dropdown-toggle loantypes-dropdown"
+          ng-disabled="disabled">
+          {{dimensions.filter || 'select one'}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu loantypes-dropdown-menu" role="menu">
+          <li ng-repeat="dimension in dimensions.type">
+            <a href="" ng-click="dimensions.filter = dimension.name;
+              status.isopen = false;">
+              {{dimension.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
@@ -45,18 +50,21 @@
     <tbody class="loantypes-table-body">
       <tr ng-init="show = false"
           ng-repeat-start="type in types
-          | filterByCapital:filterDimensions[0].filter.name
-          | filterByCredit:filterDimensions[1].filter.name
-          | filterByTerm:filterDimensions[2].filter.name"
+          | filterByCapital:filterDimensions[0].filter
+          | filterByCredit:filterDimensions[1].filter
+          | filterByTerm:filterDimensions[2].filter"
           ng-class="{'loantypes-row-expanded': show}">
-        <td ng-click="show = !show">{{show ? '-' : '+'}}</td>
-        <td ng-click="show = !show">{{type.title}}</td>
+        <td ng-click="show = !show"><a href="">{{show ? '-' : '+'}}</a></td>
+        <td ng-click="show = !show"><a href="">{{type.title}}</a></td>
         <td>
           {{type.interestRateLow ?
             type.interestRateLow  + " - " + type.interestRateHigh + "%" :
             "Not Applicable"}}
         </td>
-        <td>{{type.personalGuarantee ? "yes" : "no"}}</td>
+        <td>
+          <img ng-if="type.personalGuarantee" src="img/icons/check.png">
+          <img ng-if="!type.personalGuarantee" src="img/icons/x.png">
+        </td>
         <td>
           {{type.fundingTimeStart ? type.fundingTimeStart : "Not Applicable"}}
           {{type.fundingTimeEnd ? " - " + type.fundingTimeEnd : ""}}</td>

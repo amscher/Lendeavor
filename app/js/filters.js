@@ -5,7 +5,7 @@
 angular.module('myApp.filters', []).
   filter('filterByCapital', function() {
     return function(array, size) {
-      if (size == undefined || size == "I don't know") return array;
+      if (size == "" || size == "I don't know") return array;
       var filteredTypes = [];
       array.forEach(function(type) {
         if (type.aspects.capitalNeedsSize == "" || type.aspects.capitalNeedsSize == size) {
@@ -17,7 +17,7 @@ angular.module('myApp.filters', []).
   }).
   filter('filterByCredit', function() {
     return function(array, score) {
-      if (score == undefined || score == "I don't know") return array;
+      if (score == "" || score == "I don't know") return array;
       var filteredTypes = [];
       array.forEach(function(type) {
         if (type.aspects.credit == "" || type.aspects.credit == score) {
@@ -29,7 +29,7 @@ angular.module('myApp.filters', []).
   }).
   filter('filterByTerm', function() {
     return function(array, term) {
-      if (term == undefined || term == "I don't know") return array;
+      if (term == "" || term == "I don't know") return array;
       var filteredTypes = [];
       array.forEach(function(type) {
         if (type.aspects.term == "" || type.aspects.term == term) {

@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
-  'myApp.factories'
+  'myApp.factories',
+  'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homepage', {templateUrl: 'partials/homepage.html', controller: 'MyCtrl1'});

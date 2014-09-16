@@ -13,13 +13,6 @@ angular.module('myApp.controllers', [])
     $scope.creditFilter = "";
     $scope.termsFilter = "";
 
-
-
-    $scope.selectType = function(event, dimension, type) {
-      dimension.filter = type;
-
-    }
-
     $scope.select = function(filter, dimension) {
       if (filter == dimension) {
         filter = "";
