@@ -153,7 +153,7 @@ p.blurb {
 /***** PAGE HEADER *****/
 
 .header-container {
-  height: 200px;
+  height: 285px;
   color: white;
 }
 
@@ -165,11 +165,11 @@ p.blurb {
 .header-image {
   opacity: 0.5;
   background-color: #008DBC;
-  height: 200px;
+  height: 285px;
 }
 
 .header-container h1 {
-  padding-top: 45px;
+  padding-top: 130px;
   width: 60%;
   margin: 0 auto;
   color: white;

@@ -1,4 +1,3 @@
-<script type="text/javascript" src="js/loantypesdata.js"></script>
 <section class="header-container">
   <div class="header-image banner-image"></div>
   <div class="header-content-container">
@@ -9,12 +8,13 @@
 </section>
 
 <section id="loantypes-filter-section" class="section-content-container">
-  <div class="column-container" ng-init="selected = [true, false, false]">
+  <div class="column-container">
     <div class="column loantypes-column"
          ng-repeat="dimensions in filterDimensions"
-         ng-click="done = true"
-         ng-class="{'loantypes-filter-selected': selected[$index]}">
-         <!-- ng-show="done"> -->
+         ng-init="done = false"
+         ng-class="{'loantypes-filter-selected': selected[$index]}"
+         ng-click="filterChosen($index); done = true;">
+         <!-- ng-show="selected[$index] || finished"> -->
 
       <div class="number">{{$index + 1}}</div>
       <h5>{{dimensions.prompt}}</h5>

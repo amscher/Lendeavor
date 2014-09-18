@@ -7,6 +7,13 @@ angular.module('myApp.controllers', [])
 
   }])
   .controller('LoanTypesCtrl', ['$scope', 'LoanTypes', 'LoanAspects', function($scope, LoanTypes, LoanAspects) {
+    // Initialization.
+    $scope.finished = false;
+    $scope.selected = [true, false, false];
+    $scope.filterChosen = function(index, done) {
+      if (index == 2) $scope.finished = true;
+    }
+
     $scope.types = LoanTypes();
 
     $scope.capitalFilter = "";
@@ -35,4 +42,6 @@ angular.module('myApp.controllers', [])
           "prompt" : "What loan terms are you looking for?",
           "filter" : ""
         }];
+
+
   }]);
