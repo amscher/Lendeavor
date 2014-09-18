@@ -15,5 +15,5 @@ config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/formpage', {templateUrl: 'partials/formpage.html', controller: 'MyCtrl1'});
   $routeProvider.when('/loantypes', {templateUrl: 'partials/loantypes.html', controller: 'LoanTypesCtrl'});
   $routeProvider.when('/businesspage', {templateUrl: 'partials/business-formpage.html', controller: 'MyCtrl1'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/homepage'});
 }]);

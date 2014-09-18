@@ -9,14 +9,15 @@
   <title>My AngularJS App</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/reset.css"/>
   <link rel="stylesheet" href="css/colors.css"/>
   <link rel="stylesheet" href="css/common.css"/>
   <link rel="stylesheet" href="css/formpage_design.css"/>
   <link rel="stylesheet" href="css/homepage_design.css"/>
   <link rel="stylesheet" href="css/loantypespage.css"/>
-  <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
+  <!-- <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,300italic,400italic' rel='stylesheet' type='text/css'> -->
   <!-- Latest compiled and minified CSS -->
   <title>LendLadder Homepage</title>
 </head>
@@ -28,7 +29,8 @@
         <a href="blank">HOW IT WORKS</a>
         <a href="blank">SIGN IN</a>
       </div>
-      <img class="logo" src="img/logos/Small/LL_logo_consumer_horz_RGB.png" width="250px">
+      <img class="logo" src="img/logos/Small/LL_logo_consumer_horz_RGB.png" width="250px"
+           ng-click="$location='/homepage'">
     </nav>
   </header>
 

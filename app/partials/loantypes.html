@@ -8,13 +8,19 @@
   </div>
 </section>
 
-<section class="section-content-container">
-  <div class="column-container">
-    <div class="column" ng-repeat="dimensions in filterDimensions">
+<section id="loantypes-filter-section" class="section-content-container">
+  <div class="column-container" ng-init="selected = [true, false, false]">
+    <div class="column loantypes-column"
+         ng-repeat="dimensions in filterDimensions"
+         ng-click="done = true"
+         ng-class="{'loantypes-filter-selected': selected[$index]}">
+         <!-- ng-show="done"> -->
+
       <div class="number">{{$index + 1}}</div>
       <h5>{{dimensions.prompt}}</h5>
 
-      <div class="btn-group" dropdown is-open="status.isopen">
+      <!-- dropdown menu -->
+      <div ng-if="done" class="btn-group" dropdown is-open="status.isopen">
         <button type="button"
           class="btn btn-primary dropdown-toggle loantypes-dropdown"
           ng-disabled="disabled">
@@ -22,22 +28,45 @@
         </button>
         <ul class="dropdown-menu loantypes-dropdown-menu" role="menu">
           <li ng-repeat="dimension in dimensions.type">
-            <a href="" ng-click="dimensions.filter = dimension.name;
-              status.isopen = false;">
+            <!-- TODO::scroll down -->
+            <a href=""
+               ng-click="dimensions.filter = dimension.name;
+                  status.isopen = false;">
               {{dimension.name}}
             </a>
           </li>
         </ul>
+      </div>
+
+     <!--  initial toggle button -->
+      <div ng-if="!done && selected[$index]" class="btn-group"
+           ng-click="done = true;
+              selected[$index] = false;
+              selected[$index + 1] = true;">
+        <label ng-repeat="dimension in dimensions.type"
+               class="btn btn-primary"
+               ng-model="dimensions.filter"
+               btn-radio="dimension.name" uncheckable>
+          {{dimension.name}}
+        </label>
       </div>
     </div>
   </div>
 </section>
 
 <section class="section-content-container loantypes-container">
-<!--   <h3>A list of loans for
-      {{filterDimensions[0].filter.name}} capital needs,
-      {{filterDimensions[1].filter.name}} credit,
-      and for a {{filterDimensions[2].filter.name}} term.
+<!--   <h3>
+    A list of loans for
+    <span class="highlight-text">
+      {{filterDimensions[0].filter || '------'}}
+    </span> capital needs,
+    <span class="highlight-text">
+      {{filterDimensions[1].filter || '------'}}
+    </span> credit,
+    and for a
+    <span class="highlight-text">
+      {{filterDimensions[2].filter || '------'}}
+    </span> term.
   </h3> -->
   <table class="loantypes-table">
     <thead>
@@ -49,6 +78,7 @@
     </thead>
     <tbody class="loantypes-table-body">
       <tr ng-init="show = false"
+          class="loantypes-row"
           ng-repeat-start="type in types
           | filterByCapital:filterDimensions[0].filter
           | filterByCredit:filterDimensions[1].filter
@@ -77,5 +107,8 @@
       </tr>
     </tbody>
   </table>
-    <!-- table>(thead>th*5)+(tbody>tr*15>td*5) -->
+
+  <a class="cta-button button" href="formpage.html">
+    <span>GET STARTED</span>
+  </a>
 </section>

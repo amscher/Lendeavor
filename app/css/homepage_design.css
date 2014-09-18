@@ -107,6 +107,10 @@ hr {
 	margin-bottom: 130px;
 }
 
+.homepage-loantypes-container {
+	height: 400px;
+	border-top: 1px solid lightgray;
+}
 
 /***** HOW IT WORKS ****/
 

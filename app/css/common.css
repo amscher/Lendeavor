@@ -19,8 +19,9 @@ h2 {
 
 h3 {
   padding: 20px 10px 10px 20px;
+  color: #3D3D3D;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 16px;
   font-style: italic;
 }
 
@@ -83,7 +84,7 @@ select option {
 
 table {
   width: 100%;
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 td, th {
@@ -120,7 +121,7 @@ button {
 .column-container {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 75%;
   padding: 10px;
   margin: 10px auto;
   align-items: center;
@@ -152,7 +153,7 @@ p.blurb {
 /***** PAGE HEADER *****/
 
 .header-container {
-  height: 250px;
+  height: 200px;
   color: white;
 }
 
@@ -162,13 +163,13 @@ p.blurb {
 }
 
 .header-image {
-  opacity: 0.4;
-  background-color: #00688B;
-  height: 250px;
+  opacity: 0.5;
+  background-color: #008DBC;
+  height: 200px;
 }
 
 .header-container h1 {
-  padding-top: 75px;
+  padding-top: 45px;
   width: 60%;
   margin: 0 auto;
   color: white;
@@ -203,10 +204,22 @@ p.blurb {
   -webkit-border-radius: 7px;
 }
 
-
+.highlight-text {
+  color: #00688B;
+  font-weight: 200;
+  font-size: 24px;
+  font-style: normal;
+}
 
 .button:hover {
+  color: white;
   border: 1px solid white;
+}
+
+.btn-primary {
+  background-color: #008DBC;
+  height: 40px;
+  padding: 8px 12px;
 }
 
 .number {
