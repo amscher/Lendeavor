@@ -2,18 +2,19 @@
   <div class="header-image banner-image"></div>
   <div class="header-content-container">
     <h1>Find which type of loan could be right for you.</h1>
-    <p>Personalize this list of loan types by selecting the right capital, credit,
+    <p id="scroll">Personalize this list of loan types by selecting the right capital, credit,
     and terms for you.</p>
   </div>
 </section>
 
 <section id="loantypes-filter-section" class="section-content-container">
-  <div class="column-container">
+  <div class="column-container loantypes-column-container">
     <div class="column loantypes-column"
          ng-repeat="dimensions in filterDimensions"
          ng-init="done = false"
          ng-class="{'loantypes-filter-selected': selected[$index]}"
-         ng-click="filterChosen($index); done = true;">
+         ng-click="filterChosen($index); done = true;
+            scrollTo('scroll')">
          <!-- ng-show="selected[$index] || finished"> -->
 
       <div class="number">{{$index + 1}}</div>
@@ -54,20 +55,7 @@
   </div>
 </section>
 
-<section class="section-content-container loantypes-container">
-<!--   <h3>
-    A list of loans for
-    <span class="highlight-text">
-      {{filterDimensions[0].filter || '------'}}
-    </span> capital needs,
-    <span class="highlight-text">
-      {{filterDimensions[1].filter || '------'}}
-    </span> credit,
-    and for a
-    <span class="highlight-text">
-      {{filterDimensions[2].filter || '------'}}
-    </span> term.
-  </h3> -->
+<section class="section-content-container loantypes-list-container">
   <table class="loantypes-table">
     <thead>
       <th></th>
