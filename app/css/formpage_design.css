@@ -5,7 +5,7 @@
 /***** Form Bar ****/
 
 .progress-bar ul {
-margin: 40px auto;
+  margin: 40px auto;
   max-width: 1000px;
   position: relative;
 }
@@ -16,6 +16,7 @@ margin: 40px auto;
 	/*CSS counters to number the steps*/
 	counter-reset: step;
 }
+
 .progress-bar li {
 	list-style-type: none;
 	text-transform: uppercase;
@@ -63,7 +64,7 @@ margin: 40px auto;
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 .progress-bar li.active-step:before,  .progress-bar li.active-step:after{
-	background: #00CDCD;
+	background: #008DBC;
 	color: white;
 }
 
@@ -145,7 +146,8 @@ section .form-description {
 	padding: 15px;
 	width: 100%;
 	border-radius: 3px;
-	font-size: 17px;
+	font-size: 15px;
+	font-weight: 100;
 }
 
 .password {
@@ -161,4 +163,25 @@ section .form-description {
 	background-color: #66CD00;
 	display: block;
 	margin: 60px auto;
+}
+
+/******************************************
+/* Business Application Styles
+/*******************************************/
+
+.drop-down {
+	color: gray;
+	background: #fafafa;
+	border: 1px solid #DDDDDD;
+	height: 60px;
+	-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+	font-size: 15px;
+	font-weight: 100;
+	width: 100%;
+}
+
+.application-questions {
+	margin-left: 25%;
 }
