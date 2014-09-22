@@ -1,0 +1,102 @@
+<section class="header-container">
+  <div class="header-image banner-image"></div>
+  <div class="header-content-container">
+    <h1>Find which type of loan could be right for you.</h1>
+    <p id="scroll">Personalize this list of loan types by selecting the right capital, credit,
+    and terms for you.</p>
+  </div>
+</section>
+
+<section id="loantypes-filter-section" class="section-content-container">
+  <div class="column-container loantypes-column-container">
+    <div class="column loantypes-column"
+         ng-repeat="dimensions in filterDimensions"
+         ng-init="done = false"
+         ng-class="{'loantypes-filter-selected': selected[$index]}"
+         ng-click="filterChosen($index); done = true;
+            scrollTo('scroll')">
+         <!-- ng-show="selected[$index] || finished"> -->
+
+      <div class="number">{{$index + 1}}</div>
+      <h5>{{dimensions.prompt}}</h5>
+
+      <!-- dropdown menu -->
+      <div ng-if="done" class="btn-group" dropdown is-open="status.isopen">
+        <button type="button"
+          class="btn btn-primary dropdown-toggle loantypes-dropdown"
+          ng-disabled="disabled">
+          {{dimensions.filter || 'select one'}} <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu loantypes-dropdown-menu" role="menu">
+          <li ng-repeat="dimension in dimensions.type">
+            <!-- TODO::scroll down -->
+            <a href=""
+               ng-click="dimensions.filter = dimension.name;
+                  status.isopen = false;">
+              {{dimension.name}}
+            </a>
+          </li>
+        </ul>
+      </div>
+
+     <!--  initial toggle button -->
+      <div ng-if="!done && selected[$index]" class="btn-group"
+           ng-click="done = true;
+              selected[$index] = false;
+              selected[$index + 1] = true;">
+        <label ng-repeat="dimension in dimensions.type"
+               class="btn btn-primary"
+               ng-model="dimensions.filter"
+               btn-radio="dimension.name" uncheckable>
+          {{dimension.name}}
+        </label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-content-container loantypes-list-container">
+  <table class="loantypes-table">
+    <thead>
+      <th></th>
+      <th>Type</th>
+      <th>Interest Rate</th>
+      <th>Personal Guarantee</th>
+      <th>Time to Obtain Funding <br>(in days)</th>
+    </thead>
+    <tbody class="loantypes-table-body">
+      <tr ng-init="show = false"
+          class="loantypes-row"
+          ng-repeat-start="type in types
+          | filterByCapital:filterDimensions[0].filter
+          | filterByCredit:filterDimensions[1].filter
+          | filterByTerm:filterDimensions[2].filter"
+          ng-class="{'loantypes-row-expanded': show}">
+        <td ng-click="show = !show"><a href="">{{show ? '-' : '+'}}</a></td>
+        <td ng-click="show = !show"><a href="">{{type.title}}</a></td>
+        <td>
+          {{type.interestRateLow ?
+            type.interestRateLow  + " - " + type.interestRateHigh + "%" :
+            "Not Applicable"}}
+        </td>
+        <td>
+          <img ng-if="type.personalGuarantee" src="img/icons/check.png">
+          <img ng-if="!type.personalGuarantee" src="img/icons/x.png">
+        </td>
+        <td>
+          {{type.fundingTimeStart ? type.fundingTimeStart : "Not Applicable"}}
+          {{type.fundingTimeEnd ? " - " + type.fundingTimeEnd : ""}}</td>
+      </tr>
+      <tr ng-repeat-end ng-if="show" class="loantypes-row-description">
+        <td></td>
+        <td class="loantypes-row-description-detail"
+            colspan="3">{{type.description}}</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <a class="cta-button button" href="formpage.html">
+    <span>GET STARTED</span>
+  </a>
+</section>

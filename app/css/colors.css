@@ -8,10 +8,10 @@
 /* As hex codes */
 
 .middle-blue { color: #00516C }	/* Main Primary color */
-.dark-blue { color: #00171F }
-.darkest-blue{ color: #00394C }
+.darkest-blue { color: #00171F }
+.dark-blue { color: #00394C }
 .light-blue { background-color: #00688B }
-.lightest-blue { color: #008DBC }
+.lightest-blue { background-color: #008DBC }
 
 .middle-grey { color: #757575 } /* Main Primary color */
 .dark-grey { color: #3D3D3D }
@@ -28,4 +28,17 @@
 .rgba-primary-2 { color: rgba(  0, 57, 76,1) }
 .rgba-primary-3 { color: rgba(  0,104,139,1) }
 .rgba-primary-4 { color: rgba(  0,141,188,1) }
+
+/******* COLORS **********/
+/* middle-blue: #00516C
+/* dark-blue: #00171F
+/* darkest-blue: #00394C
+/* light-blue: #00688B
+/* lightest-blue: #008DBC
+/* middle-grey: #757575
+/* darkest-grey: #3D3D3D
+/* dark-grey: #5B5B5B
+/* light-grey: #929393
+/* lightest-grey: #D3D4D4
+/**************************/
 

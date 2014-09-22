@@ -33,11 +33,6 @@ function LoanAspects() {
   this.extra;
 };
 
-LoanAspects.ESTABLISHED = "established";
-LoanAspects.CREDIT = "credit";
-LoanAspects.CAPITAL = "capital";
-LoanAspects.TERMS = "terms";
-
 LoanAspects.EstablishedTime = {
   YOUNG: 0,
   TWOYR: 1,
@@ -47,24 +42,24 @@ LoanAspects.EstablishedTime = {
 };
 
 LoanAspects.CreditValues = {
-  VERY_POOR: 0,
-  POOR: 1,
-  GOOD: 2,
-  STRONG: 3,
-  ANY: 4
+  VERY_POOR: [0, "very poor"],
+  POOR: [1, "poor"],
+  GOOD: [2, "good"],
+  STRONG: [3, "strong"],
+  ANY: [4, "I don't know"]
 };
 
 LoanAspects.CapitalValues = {
-  SMALL: 0,
-  MEDIUM: 1,
-  LARGE: 2,
-  ANY: 3
+  SMALL: [0, "small"],
+  MEDIUM: [1, "medium"],
+  LARGE: [2, "large"],
+  ANY: [3, "I don't know"]
 };
 
 LoanAspects.TermsValues = {
-  SHORT: 0,
-  LONG: 1,
-  ANY: 2
+  SHORT: [0, "short"],
+  LONG: [1, "long"],
+  ANY: [2, "I don't know"]
 };
 
 function LoanTypeData() {
@@ -125,71 +120,6 @@ LoanTypeData.prototype.processData = function() {
     self.loanTypes.push(loanType);
   });
 };
-
-
-LoanTypeData.prototype.filterLoanTypes = function(type, aspect, loanTypes) {
-  var filtered = [];
-  loanTypes.forEach(function(type) {
-    var match = false;
-    switch(type) {
-      case LoanAspects.ESTABLISHED:
-        match = (type.aspects.established == aspect);
-        break;
-      case LoanAspects.CAPITAL:
-        match = (type.aspects.capital == aspect);
-        break;
-      case LoanAspects.CREDIT:
-        match = (type.aspects.credit == aspect);
-        break;
-      case LoanAspects.TERMS:
-        match = (type.aspects.term == aspect);
-        break;
-      default:
-        break;
-    }
-    //TODOOOOOOO!! Figure out how I want to check for an aspect?
-    if (match) filtered.push(type);
-  });
-  return filtered;
-};
-
-
-window.onload = function() {
-  var buttonEl = $(".small-capital-button");
-  var tbodyEl = $(".loantypes-table-body");
-
-  var data = new LoanTypeData();
-  data.processData();
-
-  var types = data.loanTypes;
-
-  var makeTData = function(data) {
-    return tdEl = $("<td>").text(data);
-  };
-
-  var displayLoans = function() {
-    tbodyEl.empty();
-    types.forEach(function(type) {
-      var trEl = $("<tr>");
-      trEl.append(makeTData(type.title));
-      trEl.append(makeTData(type.descripton));
-      trEl.append(makeTData(type.interestRateLow + " - " + type.interestRateHigh));
-      trEl.append(makeTData(type.personalGuarantee));
-      trEl.append(makeTData(type.fundingTimeStart + " - " + type.fundingTimeEnd));
-      trEl.append(makeTData(type.aspects));
-      tbodyEl.append(trEl);
-    });
-  };
-
-  displayLoans();
-
-  buttonEl.on("click", function(event) {
-    types = data.filterLoanTypes(LoanAspects.CAPITAL, LoanAspects.CapitalValues.SMALL, types);
-    displayLoans();
-  });
-
-};
-
 
 
 

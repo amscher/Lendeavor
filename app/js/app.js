@@ -3,16 +3,18 @@
 // Declare app level module which depends on filters, and services
 angular.module('myApp', [
   'ngRoute',
+  'ngAnimate',
   'myApp.filters',
   'myApp.services',
   'myApp.directives',
   'myApp.controllers',
+  'myApp.factories',
   'ui.bootstrap'
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/homepage', {templateUrl: 'partials/homepage.html', controller: 'MyCtrl1'});
   $routeProvider.when('/formpage', {templateUrl: 'partials/formpage.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/lendtypes', {templateUrl: 'partials/lendtypes.html', controller: 'MyCtrl1'});
-  $routeProvider.when('/businesspage', {templateUrl: 'partials/business-formpage.html', controller: 'BusinessFormPageCtrl'});
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.when('/loantypes', {templateUrl: 'partials/loantypes.html', controller: 'LoanTypesCtrl'});
+  $routeProvider.when('/businesspage', {templateUrl: 'partials/business-formpage.html', controller: 'MyCtrl1'});
+  $routeProvider.otherwise({redirectTo: '/homepage'});
 }]);

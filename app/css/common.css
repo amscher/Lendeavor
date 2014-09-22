@@ -8,6 +8,8 @@ h1, h2, h3 {
 
 h1 {
   font-weight: 700;
+  text-align: center;
+  font-size: 34px;
 }
 
 h2 {
@@ -17,14 +19,21 @@ h2 {
 
 h3 {
   padding: 20px 10px 10px 20px;
-  font-weight: 300;
-  font-size: 18px;
+  color: #3D3D3D;
+  font-weight: 200;
+  font-size: 16px;
   font-style: italic;
 }
 
 h4 {
   font-weight: 500;
-  margin: 8px;
+  margin: 10px;
+}
+
+h5 {
+  font-weight: 300;
+  font-size: 16px;
+  margin: 10px;
 }
 
 p, li {
@@ -45,6 +54,10 @@ a {
   color: #008DBC;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 input[type=text], input[type=email], textarea {
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
@@ -61,6 +74,38 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
   border: 1px solid rgba(81, 203, 238, 1);
 }
 
+select {
+  border: none;
+}
+
+select option {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+  margin: 30px auto;
+}
+
+td, th {
+  padding: 20px;
+  font-weight: 300;
+}
+
+th {
+  color: #D3D4D4;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+tr {
+  border-bottom: 1px solid #D3D4D4;
+}
+
+button {
+  border: none;
+}
+
 /****** PAGE ELEMENTS *****/
 
 .page-content-container {
@@ -69,10 +114,14 @@ input[type=text]:focus, input[type=email]:focus, textarea:focus {
   height: 100%;
 }
 
+.section-content-container {
+  padding-top: 20px;
+}
+
 .column-container {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 75%;
   padding: 10px;
   margin: 10px auto;
   align-items: center;
@@ -101,15 +150,49 @@ p.blurb {
   font-size: 18px;
 }
 
+/***** PAGE HEADER *****/
+
+.header-container {
+  height: 285px;
+  color: white;
+}
+
+.header-content-container {
+  position: absolute;
+  width: 100%;
+}
+
+.header-image {
+  opacity: 0.5;
+  background-color: #008DBC;
+  height: 285px;
+}
+
+.header-container h1 {
+  padding-top: 130px;
+  width: 60%;
+  margin: 0 auto;
+  color: white;
+}
+
+.header-container p {
+  font-size: 20px;
+  width: 42%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
 /****** COMPONENTS *******/
 
-.button {
+.dropdown, .button {
   -webkit-transition: all 0.10s ease-in-out;
   -moz-transition: all 0.10s ease-in-out;
   -ms-transition: all 0.10s ease-in-out;
   -o-transition: all 0.10s ease-in-out;
   padding: 10px 24px;
-  width: 200px;
+  min-width: 100px;
+  max-width: 200px;
   color: white;
   border-bottom: 2px solid transparent;
   font-family: 'Lato';
@@ -121,7 +204,32 @@ p.blurb {
   -webkit-border-radius: 7px;
 }
 
-.button:hover {
-  font-size: 19px;
-  color: white;
+.highlight-text {
+  color: #00688B;
+  font-weight: 200;
+  font-size: 24px;
+  font-style: normal;
 }
+
+.button:hover {
+  color: white;
+  border: 1px solid white;
+}
+
+.btn-primary {
+  background-color: #008DBC;
+  height: 40px;
+  padding: 8px 12px;
+}
+
+.number {
+  margin: 10px auto;
+  padding: 5px;
+  width: 30px;
+  color: #D3D4D4;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  border: 1px solid #D3D4D4;
+}
+
