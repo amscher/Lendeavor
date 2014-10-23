@@ -93,4 +93,7 @@ angular.module('myApp.controllers', [])
         }
    }
 
+  }])
+  .controller('BusinessFormPageCtrl', ['$scope', function($scope) {
+  	$scope.cost = 1000;
   }]);

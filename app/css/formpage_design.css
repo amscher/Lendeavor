@@ -16,6 +16,7 @@
 	/* CSS counters to number the steps*/
 	counter-reset: step;
 }
+
 .formpage-progress-bar li {
 	list-style-type: none;
 	text-transform: uppercase;
@@ -143,7 +144,8 @@ section .form-description {
 	padding: 15px;
 	width: 100%;
 	border-radius: 3px;
-	font-size: 17px;
+	font-size: 15px;
+	font-weight: 100;
 }
 
 .password {
@@ -159,4 +161,25 @@ section .form-description {
 	background-color: #66CD00;
 	display: block;
 	margin: 60px auto;
+}
+
+/******************************************
+/* Business Application Styles
+/*******************************************/
+
+.drop-down {
+	color: gray;
+	background: #fafafa;
+	border: 1px solid #DDDDDD;
+	height: 60px;
+	-webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+	font-size: 15px;
+	font-weight: 100;
+	width: 100%;
+}
+
+.application-questions {
+	margin-left: 25%;
 }
