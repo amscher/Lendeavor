@@ -4,19 +4,19 @@
 
 /***** Form Bar ****/
 
-.progress-bar ul {
+.formpage-progress-bar ul {
 	margin: 40px auto;
   max-width: 1000px;
   position: relative;
 }
 
 /****** progressbar *******/
-.progress-bar {
+.formpage-progress-bar {
 	overflow: hidden;
 	/* CSS counters to number the steps*/
 	counter-reset: step;
 }
-.progress-bar li {
+.formpage-progress-bar li {
 	list-style-type: none;
 	text-transform: uppercase;
 	font-size: 9px;
@@ -26,7 +26,7 @@
 	text-align: center;
 }
 
-.progress-bar li:before {
+.formpage-progress-bar li:before {
 	content: counter(step);
 	counter-increment: step;
 	font-family: 'lato';
@@ -42,7 +42,7 @@
 }
 
 /*progressbar connectors*/
-.progress-bar li:after {
+.formpage-progress-bar li:after {
 	content: '';
 	width: 100%;
 	height: 4px;
@@ -53,14 +53,14 @@
 	top: 13px;
 	z-index: -1; /*put it behind the numbers*/
 }
-.progress-bar li:first-child:after {
+.formpage-progress-bar li:first-child:after {
 	/*connector not needed before the first step*/
 	content: none;
 }
 
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
-.progress-bar li.active-step:before,  .progress-bar li.active-step:after{
+.formpage-progress-bar li.active-step:before,  .formpage-progress-bar li.active-step:after{
 	background: #00CDCD;
 	color: white;
 }
